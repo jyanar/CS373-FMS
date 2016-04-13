@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cs373.facilities.model.facility">
+    <class name="Facility" table="facility">
+        <id name="id" type="int" column="id" />
+        <property name="name" type="java.lang.String">
+            <column name="name" />
+        </property>
+        <many-to-one name="address" class="cs373.facilities.model.facility.Address" fetch="join">
+            <column name="address" />
+        </many-to-one>
+        <property name="manager" type="java.lang.String">
+            <column name="manager" />
+        </property>
+        <list name="units" inverse="false" table="unit" lazy="true" access="field">
+            <key>
+                <column name="id" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="cs373.facilities.model.facility.Unit" />
+        </list>
+        <property name="beginningOfTime" type="java.time.LocalDateTime" access="field">
+            <column name="beginningoftime" />
+        </property>
+    </class>
+</hibernate-mapping>

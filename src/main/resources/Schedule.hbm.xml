@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<
+<hibernate-mapping package="cs373.facilities.scheduling">
+    <class name="Schedule" table="schedule">
+        <id name="id" type="int" column="ID"/>
+        <list name="eventList" inverse="false" table="event" lazy="true" access="field">
+            <key>
+                <column name="id" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="cs373.facilities.model.scheduling.Event" />
+        </list>
+        <property name="beginningOfTime" type="java.time.LocalDateTime">
+            <column name="beginningoftime" />
+        </property>
+    </class>
+</hibernate-mapping>

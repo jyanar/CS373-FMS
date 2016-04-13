@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<description>Wiring the dependencies for the Facility Management System.</description>
+
+	<context:component-scan base-package="cs373.facilities"/>
+
+    <!-- Facility -->
+    <bean id="iaddress" class="cs373.facilities.model.facility.Address" scope="prototype"/>
+    
+    <bean id="ifacility" class="cs373.facilities.model.facility.Facility" scope="prototype">
+        <property name="address" ref="iaddress"/>
+        <property name="units">
+            <list>
+                <ref bean="iunit"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="iunit" class="cs373.facilities.model.facility.Unit" scope="prototype">
+        <property name="schedule" ref="ischedule"/>
+        <property name="maintenanceSchedule" ref="ischedule"/>
+        <property name="inspectionRequests">
+            <list>
+                <ref bean="iinspectionrequest"/>
+            </list>
+        </property>
+        <property name="pastInspectionsLog">
+            <list>
+                <ref bean="iinspectionrequest"/>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="iinspectionrequest" class="cs373.facilities.model.maintenance.InspectionRequest" scope="prototype"/>
+
+
+    <bean id="ievent" class="cs373.facilities.model.scheduling.Event" scope="prototype"/>
+    
+    <bean id="ischedule" class="cs373.facilities.model.scheduling.Schedule" scope="prototype">
+        <!-- <property name="eventList">
+            <list>
+                <ref bean="ievent"/>
+            </list>
+        </property> -->
+    </bean>
+
+</beans>

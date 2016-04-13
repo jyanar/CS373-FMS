@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cs373.facilities.model.facility">
+    <class name="Unit" table="unit">
+        <id name="id" type="int" column="id"/>
+        <property name="capacity" type="int">
+            <column name="capacity" />
+        </property>
+        <many-to-one name="schedule" class="cs373.facilities.model.scheduling.Schedule" fetch="join">
+            <column name="schedule" />
+        </many-to-one>
+        <many-to-one name="maintenanceSchedule" class="cs373.facilities.model.scheduling.Schedule" access="field" fetch="join">
+            <column name="maintenanceschedule" />
+        </many-to-one>
+        <list name="inspectionRequests" inverse="false" table="inspectionrequest" lazy="true" access="field">
+            <key>
+                <column name="id" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="cs373.facilities.model.maintenance.InspectionRequest" />
+        </list>
+        <list name="pastInspectionsLog" inverse="false" table="inspectionrequest" lazy="true" access="field">
+            <key>
+                <column name="id" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="cs373.facilities.model.maintenance.InspectionRequest" />
+        </list>
+    </class>
+</hibernate-mapping>

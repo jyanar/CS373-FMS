@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cs373.facilities.model.facility">
+    <class name="Address" table="address">
+        <id name="id" type="int" column="id"/>
+        <property name="street" type="string" column="street" />
+        <property name="city" type="string" column="city" />
+        <property name="state" type="string" column="state" />
+        <property name="zip" type="string" column="zip" />
+    </class>
+</hibernate-mapping>
