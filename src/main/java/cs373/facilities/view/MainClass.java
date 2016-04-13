@@ -85,17 +85,19 @@ public class MainClass {
 
         // Now let's test Hibernate:
 
-        System.out.println("*************** INSERT EXAMPLE *************************");
-        System.out.println("*************** Saving Address *************************");
-
-        System.out.println("Adding Address with the ID..." + argonneLab.getAddress().getId());
+        System.out.println("*************** INSERT EXAMPLE ****************************");
+        
+        System.out.println("Adding Facility with the ID..." + argonneLab.getId());
 
         Session session = HibernatePGSQLHelper.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        session.save(argonneLab.getAddress());
+        // session.save(argonneLab.getAddress());
+        // session.save(event1);
+        // session.save(particleAccSchedule);
+        session.save(argonneLab);
         session.getTransaction().commit();
 
-        System.out.println("*************** Address Inserted *************************");
+        System.out.println("*************** Facility Inserted *************************");
 
     }
 

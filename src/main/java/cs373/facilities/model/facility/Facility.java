@@ -67,6 +67,10 @@ public class Facility implements IFacility {
         this.manager = manager;
     }
 
+    public void setBeginningOfTime(LocalDateTime beginningOfTime) {
+        this.beginningOfTime = beginningOfTime;
+    }
+
     public LocalDateTime getBeginningOfTime() {
         return beginningOfTime;
     }

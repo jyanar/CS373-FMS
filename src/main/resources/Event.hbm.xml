@@ -1,27 +1,15 @@
-{<?xml version="1.0"?>
+<?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+"http://www.hibernate.org/dtd/hibernate-mapping">
 
 <hibernate-mapping package="cs373.facilities.model.scheduling">
     <class name="Event" table="event">
-        <id name="id" type="int" column="id"/>
-        <property name="description" type="java.lang.String">
-            <column name="description" />
-        </property>
-        <property name="start" type="java.time.LocalDateTime">
-            <column name="start" />
-        </property>
-        <property name="stop" type="java.time.LocalDateTime">
-            <column name="stop" />
-        </property>
-        <property name="isMaintenance" type="boolean">
-            <column name="ismaintenance" />
-        </property>
-        <property name="technician" type="java.lang.String">
-            <column name="technician" />
-        </property>
-        <property name="cost" type="double">
-            <column name="cost" />
-        </property>
+        <id name="id" type="int" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" type="string" column="description"/>
+        <property name="isMaintenance" type="boolean" column="ismaintenance"/>
+        <property name="technician" type="string" column="technician"/>
+        <property name="cost" type="double" column="cost"/>
     </class>
 </hibernate-mapping>

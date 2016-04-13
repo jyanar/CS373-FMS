@@ -4,7 +4,9 @@
 
 <hibernate-mapping package="cs373.facilities.model.maintenance">
     <class name="InspectionRequest" table="inspectionrequest">
-        <id name="id" type="int" access="field" column="id" />
+        <id name="id" type="int" column="id">
+            <generator class="increment"/>
+        </id>
         <property name="description" type="java.lang.String">
             <column name="description" />
         </property>

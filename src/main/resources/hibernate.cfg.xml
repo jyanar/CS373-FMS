@@ -26,10 +26,10 @@
 
 		<!-- Mapping resource configuration files -->
 		<mapping resource="Address.hbm.xml"/>
-		<!-- <mapping resource="Event.hbm.xml"/> -->
-		<!-- <mapping resource="Facility.hbm.xml"/> -->
-        <!-- <mapping resource="Unit.hbm.xml"/> -->
-        <!-- <mapping resource="InspectionRequest.hbm.xml"/> -->
-        <!-- <mapping resource="Schedule.hbm.xml"/> -->
+		<mapping resource="Event.hbm.xml"/>
+		<mapping resource="Facility.hbm.xml"/>
+        <mapping resource="Unit.hbm.xml"/>
+        <mapping resource="InspectionRequest.hbm.xml"/>
+        <mapping resource="Schedule.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>
