@@ -1,4 +1,4 @@
-# CS373_Project1
+# CS373 Project 2
 Michael Gibbons Jorge Yanar
 
 **System Name**: Facility Management System
@@ -10,25 +10,25 @@ Michael Gibbons Jorge Yanar
 
 **Client Interfaces**:
 - **Facility**:
-	- [ ] `public object listFacilities()`
-	- [ ] `public object getFacilityInformation()`
-	- [ ] `public object requestAvailableCapacity()`
-	- [ ] `public object addNewFacility()`
-	- [ ] `public void addFacilityDetail()`
-	- [ ] `public object removeFacility()`
+	- `public object listFacilities()`
+	- `public object getFacilityInformation()`
+	- `public object requestAvailableCapacity()`
+	- `public object addNewFacility()`
+	- `public void addFacilityDetail()`
+	- `public object removeFacility()`
 - **Facility Use**:
-	- [ ] `public object isInUseDuringInterval()`
-	- [ ] `public object assignFacilityToUse()`
-	- [ ] `public object vacateFacility()`
-	- [ ] `public object listInspections()`
-	- [ ] `public object listActualUsage()`
-	- [ ] `public object calcUsageRate()`
+	- `public object isInUseDuringInterval()`
+	- `public object assignFacilityToUse()`
+	- `public object vacateFacility()`
+	- `public object listInspections()`
+	- `public object listActualUsage()`
+	- `public object calcUsageRate()`
 - **Facility Maintenance**:
-	- [ ] `public object makeFacilityMaintRequest()`
-	- [ ] `public object scheduleMaintenance()`
-	- [ ] `public object calcMaintenanceCostForFacility()`
-	- [ ] `public object calcProblemRateForFacility()`
-	- [ ] `public object calcDownTimeForFacility()`
-	- [ ] `public object listMaintRequest()`
-	- [ ] `public object listMaintenance()`
-	- [ ] `public object listFacilityProblems()`
+	- `public object makeFacilityMaintRequest()`
+	- `public object scheduleMaintenance()`
+	- `public object calcMaintenanceCostForFacility()`
+	- `public object calcProblemRateForFacility()`
+	- `public object calcDownTimeForFacility()`
+	- `public object listMaintRequest()`
+	- `public object listMaintenance()`
+	- `public object listFacilityProblems()`
